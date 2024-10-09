@@ -139,13 +139,13 @@ void Exibe_Menu(Resposta_Usuario *Resposta, Quadro *quadro, Cores *cor)
 {
     printf("PROGRAMA GERADOR DE OBRA DE ARTE:\n");
     printf("=================================\n");
-    printf("Escolha o tipo de figura básica a ser usada para criar a obra:\n");
+    printf("Escolha o tipo de figura basica a ser usada para criar a obra:\n");
     printf("1 - Asterisco simples.\n");
-    printf("2 - Símbolo de soma com asteriscos.\n");
+    printf("2 - Simbolo de soma com asteriscos.\n");
     printf("3 - Letra X com asteriscos.\n");
-    printf("4 - Figuras aleatórias.\n");
-    printf("5 - Calopsitas de uma cor (azul, amarelo e verde) aleatória.\n");
-    printf("6 ou qualquer outro número - Calopsitas de uma cor (azul, amarelo e verde) aleatória cada.\n");
+    printf("4 - Figuras aleatorias.\n");
+    printf("5 - Calopsitas de uma cor (azul, amarelo e verde) aleatoria.\n");
+    printf("6 ou qualquer outro numero - Calopsitas de uma cor (azul, amarelo e verde) aleatoria cada.\n");
     printf("=================================\n");
 
 
@@ -158,41 +158,6 @@ void Exibe_Menu(Resposta_Usuario *Resposta, Quadro *quadro, Cores *cor)
 
 }
 
-void Escolhe_Arte(Resposta_Usuario resposta, Quadro *quadro, Cores *cores)
-{
-    if (resposta.Qtd_Figura <= 0)
-    {
-        resposta.Qtd_Figura = 1 + (rand() % 100);
-    }
-    
-    if (resposta.Qtd_Figura > 100)
-    {
-        resposta.Qtd_Figura = 100;
-    }
-
-
-    if (resposta.Tipo_Arte == 1)
-    {
-        Gerar_Asterisco(quadro, resposta);
-    } else if (resposta.Tipo_Arte == 2)
-    {
-        Gerar_Soma(quadro, resposta);
-    }else if (resposta.Tipo_Arte == 3)
-    {
-        Gerar_X(quadro, resposta);
-    } else if (resposta.Tipo_Arte == 4)
-    {
-        Gerar_Aleatoriamente(quadro, resposta);
-    } else if (resposta.Tipo_Arte == 5)
-    {
-        Gerar_Calopsita(quadro, resposta);
-    } else
-    {
-        Gerar_Calopsita_Cor_Individual(quadro, resposta, cores);
-    }
-    
-    
-}
 
 void Gerar_Asterisco(Quadro *quadro, Resposta_Usuario resposta)
 {
@@ -431,4 +396,40 @@ void Liberar_Cores(Cores *cor)
         free(cor->matriz[i]);
     }
     free(cor->matriz);
+}
+
+void Escolhe_Arte(Resposta_Usuario resposta, Quadro *quadro, Cores *cores)
+{
+    if (resposta.Qtd_Figura <= 0)
+    {
+        resposta.Qtd_Figura = 1 + (rand() % 100);
+    }
+    
+    if (resposta.Qtd_Figura > 100)
+    {
+        resposta.Qtd_Figura = 100;
+    }
+
+
+    if (resposta.Tipo_Arte == 1)
+    {
+        Gerar_Asterisco(quadro, resposta);
+    } else if (resposta.Tipo_Arte == 2)
+    {
+        Gerar_Soma(quadro, resposta);
+    }else if (resposta.Tipo_Arte == 3)
+    {
+        Gerar_X(quadro, resposta);
+    } else if (resposta.Tipo_Arte == 4)
+    {
+        Gerar_Aleatoriamente(quadro, resposta);
+    } else if (resposta.Tipo_Arte == 5)
+    {
+        Gerar_Calopsita(quadro, resposta);
+    } else
+    {
+        Gerar_Calopsita_Cor_Individual(quadro, resposta, cores);
+    }
+    
+    
 }
