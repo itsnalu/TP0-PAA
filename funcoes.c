@@ -1,3 +1,4 @@
+//Ana Luísa Moreira Rodrigues 5389
 #include "TADs.h"
 
 Quadro Criar_Quadro()
@@ -202,7 +203,7 @@ void Gerar_Soma(Quadro *quadro, Resposta_Usuario resposta)
         linha  = rand() % (quadro->linha - 1);
 
 
-        // Checada se todas as posições necessárias para fazer o símbolo de soma estão
+        // Checa se todas as posições necessárias para fazer o símbolo de soma estão
         // vazias e verificando se a linha e coluna gerada são maiores que 0, por causa 
         // das operações de subtração de 1
 
